@@ -1,448 +1,63 @@
-/* ----- Basic Reset & Defaults ----- */
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth; /* Smooth scrolling for nav links */
-}
-
-body {
-    font-family: 'Arial', sans-serif; /* Simple, professional font */
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9; /* Light grey background */
-}
-
-/* ----- Container ----- */
-.container {
-    max-width: 1100px; /* Max width of content */
-    margin: 0 auto; /* Center content */
-    padding: 0 20px; /* Padding on sides */
-}
-
-/* ----- Header & Navigation ----- */
-header {
-    background-color: #2c3e50; /* Dark blue header */
-    color: #ecf0f1; /* Light text color */
-    padding: 1rem 0;
-    position: sticky; /* Makes header stick to top */
-    top: 0;
-    z-index: 1000; /* Ensures header is above other content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header nav {
-    display: flex;
-    justify-content: space-between; /* Pushes logo left, nav right */
-    align-items: center;
-}
-
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 20px; /* Spacing between nav items */
-}
-
-header nav ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    border-radius: 4px;
-}
-
-header nav ul li a:hover {
-    background-color: #3498db; /* Blue hover background */
-    color: #fff;
-}
-
-/* ----- Hero Section ----- */
-.hero {
-    background-color: #34495e; /* Slightly lighter dark blue */
-    color: #ecf0f1;
-    padding: 80px 0;
-    text-align: center;
-}
-
-.hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px; /* Space between text and image */
-    text-align: left;
-}
-
-.hero-text {
-    flex: 2; /* Takes more space */
-}
-
-.hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-}
-
-.hero .tagline {
-    font-size: 1.4rem;
-    font-weight: 300;
-    margin-bottom: 20px;
-    color: #bdc3c7; /* Lighter grey */
-}
-
-.hero .intro {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-.hero-image {
-    flex: 1; /* Takes less space */
-    text-align: center;
-}
-
-.hero-image img {
-    max-width: 250px; /* Adjust size as needed */
-    height: auto;
-    border-radius: 50%; /* Makes image circular */
-    border: 5px solid #ecf0f1; /* White border */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* ----- Buttons ----- */
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-right: 10px;
-    margin-top: 10px; /* Spacing for buttons */
-}
-
-.btn-primary {
-    background-color: #3498db; /* Primary button blue */
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: #2980b9; /* Darker blue on hover */
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: #ecf0f1; /* Light text for hero */
-    border: 2px solid #ecf0f1; /* Light border */
-}
-
-.btn-secondary:hover {
-    background-color: #ecf0f1;
-    color: #34495e; /* Dark text on hover */
-    transform: translateY(-2px);
-}
-
-/* ----- General Section Styling ----- */
-section {
-    padding: 60px 0; /* Vertical padding for sections */
-}
-
-.section-bg {
-    background-color: #fff; /* White background for alternate sections */
-}
-
-h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #2c3e50; /* Dark blue heading */
-    position: relative;
-    padding-bottom: 10px;
-}
-
-/* Underline effect for headings */
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #3498db; /* Blue underline */
-    margin: 10px auto 0;
-}
-
-/* ----- Skills Section ----- */
-.skills-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap onto next line */
-    justify-content: center;
-    gap: 15px; /* Spacing between skill items */
-}
-
-.skills-list li {
-    background-color: #ecf0f1; /* Light grey background for skills */
-    color: #34495e; /* Dark text */
-    padding: 10px 20px;
-    border-radius: 20px; /* Pill shape */
-    font-size: 0.95rem;
-    display: flex; /* Align icon and text */
-    align-items: center;
-    gap: 8px; /* Space between icon and text */
-    transition: background-color 0.3s ease;
-}
-
-.skills-list li:hover {
-    background-color: #bdc3c7; /* Slightly darker grey on hover */
-}
-
-.skills-list li i {
-    color: #3498db; /* Blue icon color */
-}
-
-/* ----- Projects Section ----- */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 30px; /* Space between project cards */
-}
-
-.project-card {
-    background-color: #fff; /* White card background */
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #eee;
-}
-
-.project-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.project-card h3 {
-    color: #3498db; /* Blue project title */
-    margin-bottom: 10px;
-}
-
-.project-card .project-dates {
-    font-size: 0.9rem;
-    color: #7f8c8d; /* Grey for dates */
-    margin-bottom: 15px;
-    font-style: italic;
-}
-
-.project-card p {
-    margin-bottom: 10px;
-}
-
-.project-card p:last-child {
-    margin-bottom: 0;
-}
-
-.project-card strong {
-    color: #2c3e50;
-}
-
-/* ----- Education & Certifications Section ----- */
-.education-content {
-    display: flex;
-    flex-wrap: wrap; /* Wrap columns on smaller screens */
-    gap: 40px; /* Space between columns */
-    justify-content: space-around; /* Distribute space */
-}
-
-.education-column {
-    flex: 1; /* Each column takes equal space */
-    min-width: 300px; /* Minimum width before wrapping */
-}
-
-.education-column h3 {
-    color: #3498db;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 8px;
-}
-
-.education-column ul {
-    list-style: none; /* Remove default bullets */
-}
-
-.education-column ul li {
-    margin-bottom: 20px;
-    padding-left: 20px; /* Indent list items */
-    position: relative;
-}
-
-/* Custom bullet */
-.education-column ul li::before {
-    content: '\2022'; /* Bullet character */
-    color: #3498db; /* Blue bullet */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1.2em; /* Position bullet correctly */
-    position: absolute;
-    left: 10px;
-}
-
-.education-column li strong {
-    display: block; /* Makes title take full line */
-    color: #2c3e50;
-    font-size: 1.1rem;
-}
-
-.education-column li em {
-    font-size: 0.9rem;
-    color: #7f8c8d; /* Grey for dates/university */
-    display: block;
-    margin-top: 3px;
-}
-
-.cert-provider, .cert-status {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-}
-
-.cert-status {
-    font-weight: bold;
-    color: #e67e22; /* Orange for 'In Progress' */
-}
-
-
-/* ----- Contact Section ----- */
-#contact p {
-    text-align: center;
-    margin-bottom: 30px;
-    max-width: 600px; /* Limit width of intro text */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-list {
-    list-style: none;
-    text-align: center;
-}
-
-.contact-list li {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.contact-list li i {
-    color: #3498db; /* Blue icon */
-    width: 20px; /* Ensure consistent icon spacing */
-}
-
-.contact-list a {
-    color: #3498db; /* Blue link color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-list a:hover {
-    color: #2980b9; /* Darker blue on hover */
-    text-decoration: underline;
-}
-
-/* ----- Footer ----- */
-footer {
-    background-color: #2c3e50; /* Dark blue footer */
-    color: #ecf0f1;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px; /* Space above footer */
-}
-
-/* ----- Responsive Design ----- */
-@media (max-width: 768px) {
-    header nav {
-        flex-direction: column; /* Stack logo and nav links */
-        align-items: center;
-    }
-
-    header nav ul {
-        margin-top: 15px;
-        flex-direction: column; /* Stack nav links */
-        align-items: center;
-    }
-
-    header nav ul li {
-        margin: 5px 0; /* Adjust spacing for vertical layout */
-        margin-left: 0;
-    }
-
-    .hero-content {
-        flex-direction: column; /* Stack text and image */
-        text-align: center; /* Center text */
-    }
-
-    .hero-text {
-        order: 2; /* Text below image */
-        margin-top: 30px;
-    }
-
-    .hero-image {
-        order: 1; /* Image above text */
-    }
-
-     .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero .tagline {
-        font-size: 1.2rem;
-    }
-
-    .project-grid {
-         grid-template-columns: 1fr; /* Single column on smaller screens */
-    }
-
-    .education-content {
-        flex-direction: column; /* Stack education and certs columns */
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-     .container {
-        padding: 0 15px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-     .hero .tagline {
-        font-size: 1.1rem;
-    }
-     .hero .intro {
-        font-size: 1rem;
-    }
-     .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-     .skills-list li {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-     }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaskar Pittala - Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Bhaskar Pittala</h1>
+        <p>Cybersecurity Enthusiast | Ethical Hacking | Network Security</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Recent cybersecurity graduate eager to launch a career in threat detection, risk management, and ethical hacking. Passionate about applying theoretical knowledge to real-world security challenges.</p>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>NotePass</h3>
+            <p>An Android app for secure password management using AES-256 encryption.</p>
+        </div>
+        <div class="project">
+            <h3>Bug Hunting</h3>
+            <p>Reported XSS vulnerabilities in web applications using Burp Suite and Google Dorks.</p>
+        </div>
+    </section>
+    
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Cybersecurity Essentials</li>
+            <li>IT Support</li>
+            <li>CEH (In Progress)</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:pittalabhasker2@gmail.com">pittalabhasker2@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/bhaskar-pittala-b4363224b/">bhaskar-pittala</a></p>
+        <p>GitHub: <a href="https://github.com/BHASHER2229">BHASHER2229</a></p>
+        <p>Phone: 8499948773</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Bhaskar Pittala | Cybersecurity Portfolio</p>
+    </footer>
+</body>
+</html>
